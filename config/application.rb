@@ -25,9 +25,12 @@ module Authentication
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+
+
     config.generators do |g|
       g.factory_girl false
       g.factory_girl dir: 'spec/factories'
+      g.stylesheets false
     end
   end
 end
