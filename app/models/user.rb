@@ -18,6 +18,14 @@ class User < ActiveRecord::Base
   	[first_name , last_name].join(" ")
   end
 
+  def self.authenticate(email, password)
+    user = where("email = ?", [email])
+    if user.present? && user[0].password_hash == BCrypt::Engine.hash_secret(password, user[0].password_salt)
+      user[0]
+    else
+      nil
+    end
+  end
 
   private
     def assign_roles
