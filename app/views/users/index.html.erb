@@ -29,5 +29,6 @@
 </table>
 
 <br>
-
+<% if can? :update, @users %>
 <%= link_to 'New User', new_user_path %>
+<% end %>

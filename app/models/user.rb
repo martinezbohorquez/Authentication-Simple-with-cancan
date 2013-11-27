@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessor :role_ids , :password ,:password_confirmation 
+  
+  attr_accessor :role_ids , :password ,:password_confirmation
   
   has_many :assignments
   has_many :roles, :through => :assignments
